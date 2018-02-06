@@ -1,6 +1,8 @@
 prember-sitemap-generator
 ==============================================================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/shipshapecode/prember-sitemap-generator.svg)](https://greenkeeper.io/)
+
 A sitemap generator for [prember](https://github.com/ef4/prember) apps.
 
 Installation
