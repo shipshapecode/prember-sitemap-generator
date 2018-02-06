@@ -1,7 +1,7 @@
 prember-sitemap-generator
 ==============================================================================
 
-[Short description of the addon.]
+A sitemap generator for [prember](https://github.com/ef4/prember) apps.
 
 Installation
 ------------------------------------------------------------------------------
