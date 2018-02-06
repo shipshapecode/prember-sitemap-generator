@@ -21,6 +21,8 @@ module.exports = {
       const urls = premberOptions && premberOptions.urls ? premberOptions.urls : [];
       const tree = writeFile('/prember-sitemap-generator/sitemap.xml', generateSitemap(baseRoot, urls));
 
+      this.ui.writeLine(chalk.green('sitemap.xml successfully created!'));
+
       return new Funnel(tree, {
         srcDir: 'prember-sitemap-generator'
       });
