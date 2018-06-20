@@ -3,7 +3,10 @@
   "version": "0.1.1",
   "description": "Generate a basic sitemap based on your prember urls",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "prember",
+    "sitemap",
+    "sitemap generator"
   ],
   "license": "MIT",
   "author": {
