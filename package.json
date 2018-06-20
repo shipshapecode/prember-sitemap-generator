@@ -1,17 +1,21 @@
 {
   "name": "prember-sitemap-generator",
   "version": "0.1.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Generate a basic sitemap based on your prember urls",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Robert Wagner",
+    "email": "rwwagner90@gmail.com",
+    "url": "https://github.com/rwwagner90"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/shipshapecode/prember-sitemap-generator",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
