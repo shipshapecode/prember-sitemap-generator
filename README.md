@@ -8,6 +8,15 @@ prember-sitemap-generator
 
 A sitemap generator for [prember](https://github.com/ef4/prember) apps.
 
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.4 or above
+* Ember CLI v2.13 or above
+* Node.js v8 or above
+
+
 Installation
 ------------------------------------------------------------------------------
 
@@ -36,6 +45,10 @@ const app = new EmberApp(defaults, {
 ...
 ```
 
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
 License
 ------------------------------------------------------------------------------

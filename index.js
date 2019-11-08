@@ -7,7 +7,7 @@ const writeFile = require('broccoli-file-creator');
 let urls = [];
 
 module.exports = {
-  name: 'prember-sitemap-generator',
+  name: require('./package').name,
 
   urlsFromPrember(premberUrls) {
     urls = premberUrls || [];
