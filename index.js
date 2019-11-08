@@ -1,8 +1,7 @@
 'use strict';
-const Funnel = require('broccoli-funnel');
 const chalk = require('chalk');
 const generateSitemap = require('./lib/sitemap-generator').generateSitemap;
-const writeFile = require('broccoli-file-creator');
+const fs = require('fs');
 
 let urls = [];
 
@@ -13,9 +12,7 @@ module.exports = {
     urls = premberUrls || [];
   },
 
-  treeForPublic() {
-    this._super.treeForPublic && this._super.treeForPublic.apply(this, arguments);
-
+  outputReady() {
     if (process.env.EMBER_ENV === 'production') {
       const premberOptions = this.app.options['prember'];
       const baseRoot = premberOptions.baseRoot;
@@ -24,13 +21,8 @@ module.exports = {
           'ERROR: You must define `baseRoot` for prember-sitemap-generator to generate sitemaps.'
         ));
       }
-      const tree = writeFile('/prember-sitemap-generator/sitemap.xml', generateSitemap(baseRoot, urls));
-
+      fs.writeFileSync('dist/sitemap.xml', generateSitemap(baseRoot, urls));
       this.ui.writeLine(chalk.green('sitemap.xml successfully created!'));
-
-      return new Funnel(tree, {
-        srcDir: 'prember-sitemap-generator'
-      });
     }
   }
 };
