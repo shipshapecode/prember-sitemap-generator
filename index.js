@@ -4,8 +4,14 @@ const chalk = require('chalk');
 const generateSitemap = require('./lib/sitemap-generator').generateSitemap;
 const writeFile = require('broccoli-file-creator');
 
+let urls = [];
+
 module.exports = {
   name: 'prember-sitemap-generator',
+
+  urlsFromPrember(premberUrls) {
+    urls = premberUrls || [];
+  },
 
   treeForPublic() {
     this._super.treeForPublic && this._super.treeForPublic.apply(this, arguments);
@@ -18,7 +24,6 @@ module.exports = {
           'ERROR: You must define `baseRoot` for prember-sitemap-generator to generate sitemaps.'
         ));
       }
-      const urls = premberOptions && premberOptions.urls ? premberOptions.urls : [];
       const tree = writeFile('/prember-sitemap-generator/sitemap.xml', generateSitemap(baseRoot, urls));
 
       this.ui.writeLine(chalk.green('sitemap.xml successfully created!'));
