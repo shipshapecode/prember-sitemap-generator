@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "broccoli-file-creator": "^1.1.1",
-    "broccoli-funnel": "^2.0.1",
-    "chalk": "^2.3.0",
+    "broccoli-funnel": "^2.0.2",
+    "chalk": "^2.4.2",
     "ember-cli-htmlbars": "^4.0.0"
   },
   "devDependencies": {
