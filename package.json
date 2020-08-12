@@ -9,6 +9,7 @@
     "sitemap",
     "sitemap generator"
   ],
+  "repository": "https://github.com/shipshapecode/prember-sitemap-generator",
   "license": "MIT",
   "author": {
     "name": "Robert Wagner",
@@ -19,7 +20,6 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/shipshapecode/prember-sitemap-generator",
   "scripts": {
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
@@ -57,15 +57,35 @@
     "eslint-plugin-ember": "^7.1.0",
     "eslint-plugin-node": "^10.0.0",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.9.0"
+    "qunit-dom": "^0.9.0",
+    "release-it": "^13.6.5",
+    "release-it-lerna-changelog": "^2.3.0"
   },
   "engines": {
     "node": "8.* || >= 10.*"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "after": [
       "prember"
     ]
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   }
 }
