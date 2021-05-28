@@ -8,8 +8,8 @@ let urls = [];
 module.exports = {
   name: require('./package').name,
 
-  urlsFromPrember(premberUrls) {
-    urls = premberUrls || [];
+  async urlsFromPrember(premberUrls) {
+    urls = await premberUrls || [];
   },
 
   outputReady() {
